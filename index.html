@@ -6,6 +6,103 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
+<style>
+    *{
+        margin: 0px;
+        padding:0px;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+body{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height:100vh;
+    background-image: url('https://th.bing.com/th/id/R.40b1289860731d8ef2d6aecb58fe3387?rik=sClUQgYQ6J1uCw&riu=http%3a%2f%2fwallpapers.net%2fweb%2fwallpapers%2fbeautiful-night-sky-hd-wallpaper%2f1680x1050.jpg&ehk=vOLd54Am2X5ROu5%2f6V3TAuxkueADZRTdXLr4Eme%2bJ1Q%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+}
+.combine{
+    width: 400px;
+    background-color:transparent;
+    border:2px solid rgb(255,255,255,.2);
+    backdrop-filter: blur(5px);
+    color:white;
+    padding:20px;
+    border-radius: 20px;
+    border:1px transparent white;
+}
+.combine h1{
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+}
+.combine .ibox{
+    width: 100%;
+    height:50px;
+    margin: 30px 0px;
+    position: relative;
+}
+.ibox input{
+    background:transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    border:1px solid rgb(57, 239, 12);
+    padding: 20px 50px 20px 20px;
+    color:white;
+    font-size: larger;
+}
+.ibox input::placeholder{
+    color:white;
+}
+.ibox i{
+    position: absolute;
+    right: 20px;
+    top:30%;
+    font-size: larger;
+}
+.ibox1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.ibox1 label input{
+    accent-color:white;
+}
+.ibox1 a{
+    text-decoration: none;
+    color:white;
+    text-shadow: 0px 0px 15px black;
+}
+.ibox1 a:hover{
+    text-decoration: underline;
+}
+.ibox2 button{
+    width:100%;
+    height:40px;
+    background-color: white;
+    border:none;
+    border-radius: 40px;
+    margin-bottom:20px;
+    box-shadow: 0 0 5px black;
+    font-weight: 900;
+}
+.ibox3{
+text-align: center;
+margin: 0px 0 10px;
+}
+.combine .ibox3 a{
+    font-weight: 500;
+    color:white;
+    text-decoration: none;
+}
+.ibox3 a:hover{
+    text-decoration: underline;
+}
+.ibox2 button:active{
+    background-color:rgb(233, 43, 233) ;
+}
+</style>
 <body>
     <div class="combine">
         <h1>Login</h1>
@@ -34,4 +131,4 @@
     </div>
     
 </body>
-    </html>
+</html>
