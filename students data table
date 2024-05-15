@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+       margin:0px;
+    }
+    table{
+        border:2px solid black;
+      
+    }
+    td,th{
+        border:1px solid black;
+        
+    }
+    select{
+        width: 100%;
+    }
+    input.button{
+        width: 100%;
+    }
+    @media(max-width:600px){
+        body{
+            color:green;
+            background-color: rgb(43, 33, 33);
+        }
+        table{
+        border:2px solid rgb(255, 255, 255);
+      
+    }
+    td,th{
+        border:1px solid rgb(255, 255, 255);
+        
+    }
+    }
+</style>
+<body>
+    <center>
+        <form>
+            <table>
+                <tr>
+                    <th>Name</th><td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <th>Roll No</th><td><input id="rollno" type="number"></td>
+                </tr>
+                <tr>
+                    <th>Gender</th><td><input name="gender" value="Male" type="radio">Male <input name="gender" value="Female" type="radio">Female</td>
+                </tr>
+                <tr>
+                    <th>Course</th>
+                    <td>
+                        <select id="course">
+                            <option>CSE</option>
+                            <option>ECE</option>
+                            <option>EEE</option>
+                            <option>CIVIL</option>
+                            <option>AUTOMOBILE</option>
+                            <option>MECHANIC</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>E-mail</th><td><input id="email" type="email"></td>
+                </tr>
+                <tr>
+                    <td><input class="button" value="Add Student" onclick="addStudent()" type="button"></td>
+                </tr>
+            </table>
+        </form><br>
+        <table border="2">
+            <thread>
+                <tr>
+                    <th>Name</th><th>Roll No</th><th>Gender</th><th>Course</th><th>Email</th>
+                </tr>
+            </thread>
+            <tbody id="tbl">
+    
+            </tbody>
+        </table>
+    </center>
+</body>
+<script>
+    
+    let table=document.querySelector('#tbl');
+
+    function addStudent(){
+    
+    let nameInput=document.getElementById('name');
+    let rollnoInput=document.getElementById('rollno');
+    let genderInput=document.querySelector('input[name = "gender"]');
+    let courseInput=document.getElementById('course');
+    let emailInput=document.getElementById('email');
+
+    let name=nameInput.value;
+    let rollno=rollnoInput.value;
+    let gender=genderInput.value;
+    let course=courseInput.value;
+    let email=emailInput.value;
+
+    let template=`<tr>
+                    <td>${name}</td>
+                    <td>${rollno}</td>
+                    <td>${gender}</td>
+                    <td>${course}</td>
+                    <td>${email}</td>
+                  </tr>`;
+
+    table.innerHTML += template;
+    }
+</script>
+</html>
