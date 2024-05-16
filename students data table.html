@@ -23,7 +23,7 @@
     input.button{
         width: 100%;
     }
-    @media(max-width:600px){
+    @media screen and (max-width:600px){
         body{
             color:green;
             background-color: rgb(43, 33, 33);
@@ -36,6 +36,27 @@
         border:1px solid rgb(255, 255, 255);
         
     }
+    }
+    th.name{
+        width:200px;
+    }
+    th.rollno{
+        width:150px;
+    }
+    th.gender{
+        width:100px;
+    }
+    th.course{
+        width:75px;
+    }
+    th.email{
+        width:300px;
+    }
+    th.action{
+        width:75px;
+    }
+    button.delete{
+        background-color:red; 
     }
 </style>
 <body>
@@ -72,10 +93,11 @@
                 </tr>
             </table>
         </form><br>
-        <table border="2">
+        <table class="update" border="2">
             <thread>
                 <tr>
-                    <th>Name</th><th>Roll No</th><th>Gender</th><th>Course</th><th>Email</th>
+                    <th class="name">Name</th><th class="rollno">Roll No</th>
+                    <th class="gender">Gender</th><th class="course">Course</th><th class="email">Email</th><th class="action">Action</th>
                 </tr>
             </thread>
             <tbody id="tbl">
@@ -85,32 +107,42 @@
     </center>
 </body>
 <script>
-    
-    let table=document.querySelector('#tbl');
+    let table = document.querySelector('#tbl');
 
-    function addStudent(){
-    
-    let nameInput=document.getElementById('name');
-    let rollnoInput=document.getElementById('rollno');
-    let genderInput=document.querySelector('input[name = "gender"]');
-    let courseInput=document.getElementById('course');
-    let emailInput=document.getElementById('email');
+    function addStudent() {
+        let nameInput = document.getElementById('name');
+        let rollnoInput = document.getElementById('rollno');
+        let genderInputs = document.querySelectorAll('input[name="gender"]');
+        let courseInput = document.getElementById('course');
+        let emailInput = document.getElementById('email');
 
-    let name=nameInput.value;
-    let rollno=rollnoInput.value;
-    let gender=genderInput.value;
-    let course=courseInput.value;
-    let email=emailInput.value;
+        let name = nameInput.value;
+        let rollno = rollnoInput.value;
+        let gender = '';
+        genderInputs.forEach(input => {
+            if (input.checked) {
+                gender = input.value;
+            }
+        });
+        let course = courseInput.value;
+        let email = emailInput.value;
 
-    let template=`<tr>
-                    <td>${name}</td>
-                    <td>${rollno}</td>
-                    <td>${gender}</td>
-                    <td>${course}</td>
-                    <td>${email}</td>
-                  </tr>`;
+        let template = `<tr>
+                            <td>${name}</td>
+                            <td>${rollno}</td>
+                            <td>${gender}</td>
+                            <td>${course}</td>
+                            <td>${email}</td>
+                            <td>${"<button class='delete' onclick='deleterow(this)'>Delete</button>"}</td>
+                        </tr>`;
 
-    table.innerHTML += template;
+        table.innerHTML += template;
+                    }
+        function deleterow(button){
+           let row=button.parentNode.parentNode;
+           row.parentNode.removeChild(row);
+        
     }
 </script>
+
 </html>
