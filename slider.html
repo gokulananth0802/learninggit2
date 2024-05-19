@@ -1,0 +1,92 @@
+<style>
+    .slider-container{
+        overflow:hidden;
+    }
+    .slider{
+        display:flex;
+        transition: transform 1s ease;
+    }
+    .card{
+        padding:25px;
+        flex:0 0 100%;
+        margin-right:20px;
+        text-align:center;
+        position: relative;
+    }
+    .onlycard1{
+        position: absolute;
+        left: 25%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding:0px 20px;
+    }
+    .onlycard2{
+        position: relative;
+        left: 25%;
+        width:50%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding:0px 10px;
+    }
+    .skillimg{
+        width:100px;
+        height:100px;
+        border:1px solid black;
+        margin:10px;
+    }
+</style>
+<div class="slider-container">
+    <div class="slider">
+        <div class="card">
+            <div class="onlycard1">
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="onlycard2">
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="" alt="skillimg" width="100px" height="100px">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let slider=document.querySelector('.slider');
+    let cards=document.querySelectorAll('.card');
+    let cardWidth=cards[0].offsetWidth;
+    let currentIndex=0;
+
+    function nextCard(){
+        currentIndex++;
+        if(currentIndex>cards.length-1){
+            currentIndex=0;
+        }
+        updatePosition();
+    }
+    function updatePosition(){
+        let newPosition=-currentIndex*cardWidth;
+        slider.style.transform=`translateX(${newPosition}px)`;
+    }
+    setInterval(nextCard,3000)
+</script>
