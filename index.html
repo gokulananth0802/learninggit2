@@ -1,134 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 <style>
-    *{
-        margin: 0px;
-        padding:0px;
-        box-sizing: border-box;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
+*{
+  color:black;
+}
 body{
+  display:flex;
     justify-content: center;
-    display: flex;
-    align-items: center;
-    height:100vh;
-    background-image: url('https://th.bing.com/th/id/R.40b1289860731d8ef2d6aecb58fe3387?rik=sClUQgYQ6J1uCw&riu=http%3a%2f%2fwallpapers.net%2fweb%2fwallpapers%2fbeautiful-night-sky-hd-wallpaper%2f1680x1050.jpg&ehk=vOLd54Am2X5ROu5%2f6V3TAuxkueADZRTdXLr4Eme%2bJ1Q%3d&risl=&pid=ImgRaw&r=0');
-    background-size: cover;
+    align-items:center;
+    height:80vh;
+    width:97%;
 }
-.combine{
-    width: 400px;
+ .container{
+        width: 385px;
     background-color:transparent;
-    border:2px solid rgb(255,255,255,.2);
     backdrop-filter: blur(5px);
-    color:white;
-    padding:20px;
-    border-radius: 20px;
-    border:1px transparent white;
-}
-.combine h1{
-    font-size: 40px;
-    text-align: center;
-    text-shadow: 0px 0px 5px black;
-}
-.combine .ibox{
-    width: 100%;
-    height:50px;
-    margin: 30px 0px;
-    position: relative;
-}
-.ibox input{
-    background:transparent;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    border:1px solid rgb(57, 239, 12);
-    padding: 20px 50px 20px 20px;
-    color:white;
-    font-size: larger;
-}
-.ibox input::placeholder{
-    color:white;
-}
-.ibox i{
-    position: absolute;
-    right: 20px;
-    top:30%;
-    font-size: larger;
-}
-.ibox1{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-.ibox1 label input{
-    accent-color:white;
-}
-.ibox1 a{
-    text-decoration: none;
-    color:white;
-    text-shadow: 0px 0px 15px black;
-}
-.ibox1 a:hover{
-    text-decoration: underline;
-}
-.ibox2 button{
-    width:100%;
-    height:40px;
-    background-color: white;
-    border:none;
-    border-radius: 40px;
-    margin-bottom:20px;
-    box-shadow: 0 0 5px black;
-    font-weight: 900;
-}
-.ibox3{
-text-align: center;
-margin: 0px 0 10px;
-}
-.combine .ibox3 a{
-    font-weight: 500;
-    color:white;
-    text-decoration: none;
-}
-.ibox3 a:hover{
-    text-decoration: underline;
-}
-.ibox2 button:active{
-    background-color:rgb(233, 43, 233) ;
-}
-</style>
-<body>
-    <div class="combine">
-        <h1>Login</h1>
-            <form>
-                <div class="ibox">
-                    <input type="email" placeholder="Enter email">
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="ibox">
-                    <input type="password" placeholder="Enter password">
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-                <div class="ibox1">
-                    <label><input type="checkbox">Remember me</label>
-                    <a href="#">Forget Password?</a>
-                </div>
-                <div class="ibox2">
-                    <button onclick="change()">LOGIN</button>
-                </div>
-                <div class="ibox3">
-                    <label>Don't you have an account?  <i><a href="#">Register</a></i></label>
-                </div>
-                </form>
-            </center>
-        </span>
-    </div>
+    padding-left:12px;
+    padding-right:35px;
+  }
+  form{
     
+    border:1px solid grey;
+    padding:20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.119);
+    backdrop-filter: blur(5px);
+  }
+  @media all and (max-width:600){
+    .container{
+      width:90%;
+    }
+  }
+  div h1{
+    font-family: "Rubik Mono One", monospace;
+  font-weight: 900;
+  margin-bottom: 30px;
+  }
+  button{
+    all : unset;
+  }
+ .user,.password,.google,.fb,.loginbtn,.firstname,.lastname,.email{
+   height:40px;
+   width:100%;
+   border:1px solid grey;
+   margin:20px 0px;
+ }
+ .user,.password,.firstname,.lastname,.email{
+   width:100%;
+   height:50px;
+   display:flex;
+   justify-content: space-between;
+   align-items:center;
+   border:none;
+   position:relative;
+ }
+ .user input,.password input,.firstname input,.lastname input,.email input{
+    width:100%;
+    height: 90%;
+ }
+ .user input:hover,.password input:hover{
+    border:2px solid rgb(4, 254, 0);
+    transition: 0.2s;
+ }
+ .user i,.password i{
+   position: absolute;
+   right:10px;
+ }
+ .password input{
+   padding-left:10px;
+ }
+ .user input{
+   padding-left:10px;
+ }
+ .user input::placeholder,.password input::placeholder,.firstname input::placeholder,.lastname input::placeholder,.email input::placeholder{
+   position: absolute;
+   left:10px;
+   color:grey;
+ }
+
+ .loginbtn,.google,.fb{
+   position: relative;
+   border-radius:30px;
+ }
+ .loginbtn{
+   margin-bottom:40px;
+   text-align: center ;
+   font-weight:800;
+   overflow:hidden;
+ }
+ .loginbtn button{
+    width:100%;
+  height: 100%;
+   background-color:rgb(255, 85, 0);
+ }
+ .loginbtn button:hover{
+    background-color:yellow;
+    transition:0.2s;
+ }
+.google button,.fb button{
+  width:100%;
+  height: 100%;
+  font-weight:700;
+}
+.google,.fb{
+  display:flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(0, 255, 251);
+}
+.google img,.fb img{
+  width:30px;
+  height:30px;
+  margin-left:25px;
+  margin-right:20px;
+  border-radius:50%;
+  box-shadow: -2px -2px 1px black;
+}
+.rem{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:30px ;
+}
+.rem input{
+    margin-right:-35px;  
+}
+.rem a{
+    color:blue;   
+}
+ .user input,.password input,.google button,.fb button,.login button{
+   
+ }
+ 
+ 
+ i{
+   font-size:20px;
+ }
+  .combine{
+    width:99%;
+    border:3px solid black;
+    border-radius:20px;
+    position:relative;
+  }
+ .btncontain{
+   border-radius:50%;
+   position:absolute;
+   bottom:-8%;
+   left:35%;
+ }
+  .boxes{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    margin-bottom:50px;
+    overflow:hidden;
+  }
+  .login{
+    transition:transform 0.5s;
+  }
+  .signup{
+    transition:transform 0.5s;
+  }
+   .btn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    width:100px;
+    border:2px solid black;
+    border-radius:50%;
+    position: relative;
+  }
+  p{
+    font-size:20px;
+    font-weight: 600;
+    background:transparent;
+    padding:0px 10px;
+    border-radius:70px;
+  }
+  label.left{
+    content: ' ';
+      background-color:#6b5ecc;
+      width:20px;
+      height:20px;
+      border:1px solid black;
+      border-radius:50%;
+      position:absolute;
+      top:40%;
+      left:-15px;
+      z-index:5;
+  }
+  label.right{
+    content: ' ';
+      background:#6b5ecc;
+      width:20px;
+      height:20px;
+      border:1px solid black;
+      border-radius:50%;
+      position:absolute;
+      top:40%;
+      right:-15px;
+       z-index:5;
+  }
+  .rotate1{
+    background:#0385ff;
+    transform: rotate(45deg);
+    transition: transform 1s ease;
+  }
+  .rotate2{
+    background:#82c3ff;
+    transform: rotate(-45deg);
+    transition: transform 1s ease;
+  }
+</style>
+<body onload="setDefaultpage()">
+  
+   <div class="combine">
+     
+     <div class="boxes">
+       <div id="login">
+          <div class="container">
+   <form>
+     <div>
+     <center><h1>LOGIN</h1></center>
+   </div>
+   
+   <div class="user">
+     <input type="text" placeholder="username/email">
+     <i class='bx bxs-user-circle'></i>
+   </div>
+   <div class="password">
+     <input type="text" placeholder="password">
+     <i class='bx bxs-lock-alt'></i>
+     </div>
+   <div class="rem">
+    <input type="checkbox"><label>Remember me</label>
+    <a href="#">Forget Password ?</a>
+   </div>
+   <div class="loginbtn">
+     <button>LOGIN</button>
+   </div>
+   <div class="google">
+     <img src="google-symbol.png">
+     <button>continue with GOOGLE</button>
+   </div>
+   <div class="fb">
+     <img src="facebook.png">
+     <button>continue with FACEBOOK</button>
+   </div>
+
+   </form>
+    </div>
+       </div>
+       <!--    login form -->
+       <div id="signup">
+         <div class="container">
+   <form>
+     <div>
+     <center><h1>SIGNUP</h1></center>
+   </div>
+   
+   <div class="firstname">
+     <input type="text" placeholder="Firstname">
+     <i class='bx bxs-user-circle'></i>
+   </div>
+   <div class="lastname">
+     <input type="text" placeholder="Lastname">
+     <i class='bx bxs-user-circle'></i>
+   </div>
+   <div class="email">
+     <input type="email" placeholder="Email">
+   </div>
+   <div class="password">
+     <input type="text" placeholder="Create password">
+     <i class='bx bxs-lock-alt'></i>
+     </div>
+     <div class="password">
+     <input type="text" placeholder="Retype password">
+     <i class='bx bxs-lock-alt'></i>
+     </div>
+   <div class="loginbtn">
+     <button>SIGNUP</button>
+   </div>
+   
+
+   </form>
+    </div>
+       </div>
+     </div>
+      <div class="btncontain" onclick="change()">
+       <div class="btn">
+        <label class="left"></label><p></p><label class="right"></label>
+       </div>
+     </div>
+   </div>
 </body>
-</html>
+<script>
+  let i=0;
+  function change(){
+    let boxes=document.querySelector(".boxes");
+    let login=document.querySelector("#login");
+    let signup=document.querySelector("#signup");
+    let text=document.querySelector("p");
+    let btncontain=document.querySelector(".btncontain");
+    let textOption=["SIGNUP","LOGIN"];
+    if(i==0){
+      
+      text.textContent=textOption[i];
+      btncontain.classList.remove("rotate2");
+      btncontain.classList.add("rotate1");
+      text.classList.remove("rotate1");
+      text.classList.add("rotate2");
+      login.style.transform=`translateX(-435px)`;
+      signup.style.transform=`translateX(-435px)`;
+      signup.style.transition=`0.5s`;
+      text.style.background=`#0385ff`;
+    }
+    else{
+      text.textContent=textOption[i];
+      btncontain.classList.remove("rotate1");
+      btncontain.classList.add("rotate2");
+      text.classList.remove("rotate2");
+      text.classList.add("rotate1");
+      login.style.transform=`translateX(0px)`;
+      signup.style.transform=`translateX(350px)`;
+      signup.style.transition=`1s`;
+      text.style.background=`#82c3ff`;
+    }
+    
+    i=(i+1)%textOption.length;
+  }
+  function setDefaultpage(){
+    let btncontain=document.querySelector(".btncontain");
+    let text=document.querySelector("p");
+    let login=document.querySelector("#login");
+    text.textContent="LOGIN";
+    btncontain.classList.add("rotate2");
+    text.classList.add("rotate1");
+    login.classList.add("login");
+    text.style.background=`#82c3ff`;
+  }
+</script>
+    </html>
